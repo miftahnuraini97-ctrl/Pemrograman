@@ -1,0 +1,31 @@
+.container{
+    height: 100vh;
+}
+
+.creative-text {
+    font-size: 48px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .creative-text span {
+    display: inline-block;
+    font-size: 60px;
+    color: #4CAF50;
+    animation: textAnimation 2s ease-in-out infinite;
+  }
+  
+  @keyframes textAnimation {
+    0% {
+      transform: scale(1);
+      color: #4CAF50;
+    }
+    50% {
+      transform: scale(1.2);
+      color: #FFC107;
+    }
+    100% {
+      transform: scale(1);
+      color: #4CAF50;
+    }
+  }
