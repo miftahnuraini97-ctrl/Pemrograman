@@ -1,6 +1,4 @@
 <?php
-// Konfigurasi koneksi database
-// Sesuaikan jika username/password MySQL Anda berbeda (default XAMPP: root, tanpa password)
 
 $host = "localhost";
 $user = "root";

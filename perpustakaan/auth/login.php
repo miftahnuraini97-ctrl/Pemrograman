@@ -1,9 +1,7 @@
 <?php
 session_start();
-// load DB config; use absolute path to avoid relative include issues
 require_once __DIR__ . '/../config/db.php';
 
-// If $conn isn't provided by config, create a fallback connection
 if (!isset($conn) || !($conn instanceof mysqli)) {
     $conn = mysqli_connect('localhost', 'root', '', 'perpustakaan');
     if (!$conn) {

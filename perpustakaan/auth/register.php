@@ -14,7 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($password !== $konfirmasi) {
         $error = "Konfirmasi password tidak cocok.";
     } else {
-        // cek username sudah ada atau belum
+        
+    // cek username sudah ada atau belum
         $cek_stmt = mysqli_prepare($conn, "SELECT id FROM users WHERE username = ?");
         mysqli_stmt_bind_param($cek_stmt, "s", $username);
         mysqli_stmt_execute($cek_stmt);
@@ -24,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Username sudah digunakan, silakan pilih yang lain.";
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            // Registrasi publik selalu sebagai role 'user'
+           
             $stmt = mysqli_prepare($conn, "INSERT INTO users (nama, username, password, role) VALUES (?, ?, ?, 'user')");
             mysqli_stmt_bind_param($stmt, "sss", $nama, $username, $hash);
             if (mysqli_stmt_execute($stmt)) {
